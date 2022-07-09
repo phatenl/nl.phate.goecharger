@@ -41,4 +41,7 @@
   "1.0.0": {
     "en": "Version 1.0"
   }
+  "1.0.1": {
+    "en": "Fixed a specific 1 phase connection situation where the voltage could become negative"
+}
 }
