@@ -53,6 +53,12 @@ module.exports = class goechargerApi {
         var measure_current = (goecharger.nrg[4]+goecharger.nrg[5]+goecharger.nrg[6])/measure_current_divider;
         //console.log("measure_current_divider:"+measure_current_divider)
 
+        var voltage_now = 0;
+        voltage_now = goecharger.nrg[0]+goecharger.nrg[1]+goecharger.nrg[2];
+        if(voltage_now<0){
+           //this will mean there is a 1 phase connected the other way around.
+            voltage_now = goecharger.nrg[3];
+        }
         var energy_tot = 0;
         if(goecharger.eto>0) {energy_tot=goecharger.eto/10}
 
